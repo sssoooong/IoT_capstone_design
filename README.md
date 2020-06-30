@@ -12,8 +12,8 @@
 3. 재학생 여부 및 학번, 마스크 착용 유무를 아두이노로 보내줍니다.<br><br>
 
 <b>Arduino :</b><br>
-1. 온도센서를 통해 방문자의 온도를 측정합니다.<br>
-2. <b>imageProcessing</b> 에서 받아온 재학생 정보와 마스크 착용 유무 값을 AWS DB에 올려줍니다.<br><br>
+1. 온도센서를 통해 방문자의 체온을 측정합니다.<br>
+2. 체온을 <b>imageProcessing</b> 에서 받아온 재학생 정보와 마스크 착용 유무 값과 함께 AWS DB에 올려줍니다.<br><br>
 
 <b>adminAndroid :</b> 관리자가 사용하는 안드로이드 앱 입니다.
 <img src="https://user-images.githubusercontent.com/52819424/86145920-83126080-bb32-11ea-9334-2d225986b894.JPG">
