@@ -48,7 +48,7 @@
  3. if(buttonValue==HIGH)을 통해 버튼을 클릭을 확인하고 온도센서가 온도를 측정합니다.<br>
  4. getDeviceStatus, sendMessage 함수를 통해 학번, 마스크 착용 유무 값과 체온값을 시리얼창에 출력 및 AWS에 보내줍니다.
  
- <b>
+ <br>
 
 <h2><b>adminAndroid :</b></h2> 관리자가 사용하는 안드로이드 앱 입니다.
 <img src="https://user-images.githubusercontent.com/52819424/86145920-83126080-bb32-11ea-9334-2d225986b894.JPG">
