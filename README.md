@@ -5,12 +5,12 @@
 <br>
 <hr>
 <h1><b>2. 코드 설명 </b></h1>
-<h2><b>mask_image :</b></h2><br>
+<h2><b>1. mask_image :</b></h2><br>
 1. 이미지를 학습 데이터를 사용하기 위해 이미지 파일을 이진화 합니다.<br>
 2. 이미지를 학습하여 학습 모델(kyung_zzu.h5)을 생성합니다.<br>
 3. 이미지의 학습의 정확도를 판단하기 위해 사용자가 지정한 경로의 이미지를 판단합니다.<br>
 
-<h2><b>imageProcessing :</b></h2><br>
+<h2><b>2. imageProcessing :</b></h2><br>
 <img src="https://user-images.githubusercontent.com/52819424/86149218-a4754b80-bb36-11ea-9f36-bbfdb5377b1e.png">
 1. 방문자의 학생증 바코드를 카메라로 스캔하여 한성대학교 재학생 여부를 판단합니다.<br>
 2. 마스크 착용/미착용을 학습한 모델(kyung_zzu.h5)을 이용하여 방문자의 마스크 착용 유무를 판단합니다. (카메라를 통해 방문자의 이미지 판단)<br>
@@ -33,20 +33,20 @@
 <b> arduino(barcod_data,image_data) : </b><br>
  1) 아두이노와 같은 PORT번호를 지정하여 재학생 학번과 마스크 착용여부를 아두이노로 보내줍니다.<br>
 
-<h2><b>Arduino :</b></h2><br>
+<h2><b>3. Arduino :</b></h2><br>
 <img src="https://user-images.githubusercontent.com/52819424/86149409-e1d9d900-bb36-11ea-8496-00287fa0d7f1.png">
- 1. 온도센서를 통해 방문자의 체온을 측정합니다.<br>
- 2. 측정한 체온값을 LCD로 출력해 사용자도 확인할 수 있도록 합니다.
- 2. 체온을 <b>imageProcessing</b> 에서 받아온 재학생 정보와 마스크 착용 유무 값과 함께 AWS DB에 올려줍니다.<br><br>
+ 1) 온도센서를 통해 방문자의 체온을 측정합니다.<br>
+ 2) 측정한 체온값을 LCD로 출력해 사용자도 확인할 수 있도록 합니다.
+ 3) 체온을 <b>imageProcessing</b> 에서 받아온 재학생 정보와 마스크 착용 유무 값과 함께 AWS DB에 올려줍니다.<br><br>
  <br>
  <b>mlx90614_setup()</b><br>
  1) LCD를 사용하기 위해 init()로 LCD를 초기화하고 backlight()를 통해 백라이트를 킵니다.<br>
  2) 시리얼 통신을 위한 설정을 합니다.<br>
  <b>mlx90614_loop()</b><br>
- 1. connetWiFi()함수를 통해 와이파이 연결을 시도합니다.<br>
- 2. connetMQTT()함수를 통해 MQTT연결을 시도합니다.<br>
- 3. if(buttonValue==HIGH)을 통해 버튼을 클릭을 확인하고 온도센서가 온도를 측정합니다.<br>
- 4. getDeviceStatus, sendMessage 함수를 통해 학번, 마스크 착용 유무 값과 체온값을 시리얼창에 출력 및 AWS에 보내줍니다.
+ 1) connetWiFi()함수를 통해 와이파이 연결을 시도합니다.<br>
+ 2) connetMQTT()함수를 통해 MQTT연결을 시도합니다.<br>
+ 3) if(buttonValue==HIGH)을 통해 버튼을 클릭을 확인하고 온도센서가 온도를 측정합니다.<br>
+ 4) getDeviceStatus, sendMessage 함수를 통해 학번, 마스크 착용 유무 값과 체온값을 시리얼창에 출력 및 AWS에 보내줍니다.
  
  <br>
 
